@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="text-center">Bienvenue sur InnovShop</h1>
+
+        <h2 class="mt-4">Derniers produits ajoutés</h2>
+        <div class="row">
+            {% for product in latestProducts %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{{ asset(product.image) }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <p class="card-text"><strong>{{ product.price }} €</strong></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2 class="mt-4">Produits à la une</h2>
+        <div class="row">
+            {% for product in featuredProducts %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{{ asset(product.image) }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text">{{ product.description }}</p>
+                            <p class="card-text"><strong>{{ product.price }} €</strong></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

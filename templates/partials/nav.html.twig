@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_home') }}">Acueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_catalogue') }}">Catalogue</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_panier') }}">Panier</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_commande') }}">Commande</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_client') }}">Espace client</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('app_register') }}">Inscription</a></li>
+
+                {% if app.user %}
+                    <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}">Deconnexion</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{{ path('app_login') }}">Connexion</a></li>
+                {% endif %}
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
