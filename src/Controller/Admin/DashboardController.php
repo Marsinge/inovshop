@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Category;
+use App\Entity\Post;
 use App\Entity\Product;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -31,5 +32,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Gestion de Categorie', 'fas fa-list', Category::class);
         yield MenuItem::linkToCrud('Gestion de Produit', 'fas fa-list', Product::class);
+        yield MenuItem::linkToCrud('Gestion de Articles', 'fas fa-list', Post::class);
     }
 }
